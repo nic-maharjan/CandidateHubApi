@@ -23,11 +23,5 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Reference Include="CandidateApiHub.Tests">
-      <HintPath>CandidateApiHub.Tests\bin\Debug\net6.0\CandidateApiHub.Tests.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-
 
 </Project>
