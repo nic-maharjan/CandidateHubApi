@@ -32,7 +32,13 @@ namespace CandidateHubApi.Controllers
 		{
 			if (!ModelState.IsValid)
 			{
-				return BadRequest(ModelState);
+				// Extract error messages only
+				var errorMessages = ModelState.Values
+					.SelectMany(v => v.Errors)
+					.Select(e => e.ErrorMessage)
+					.ToList();
+
+				return BadRequest(errorMessages);
 			}
 
 			await _repository.AddOrUpdateAsync(candidate);
