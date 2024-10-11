@@ -1,5 +1,6 @@
-﻿using static CandidateHubApi.Model.Candidates;
+﻿
 
+using static CandidateHubApi.Model.Candidates;
 
 namespace CandidateHubApi.DbContext
 {

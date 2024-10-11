@@ -1,3 +1,7 @@
+using CandidateHubApi.DbContext;
+using Microsoft.EntityFrameworkCore;
+using System;
+
 namespace CandidateHubApi
 {
 	public class Program
@@ -7,6 +11,8 @@ namespace CandidateHubApi
 			var builder = WebApplication.CreateBuilder(args);
 
 			// Add services to the container.
+			builder.Services.AddDbContext<CandidateDbContext>(options =>
+			options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 			builder.Services.AddControllers();
 			// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
